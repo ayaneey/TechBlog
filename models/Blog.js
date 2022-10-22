@@ -21,14 +21,23 @@ Blog.init(
       allowNull: false,
     },
     user_id: {
-    type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
+      references: {
+        model: User,
+        key: "id",
+      },
     },
-    password: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [6],
-      },
+    },
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
