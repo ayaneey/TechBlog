@@ -2,7 +2,7 @@ const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 const User = require("./User");
-const Blog = require("./Blog");
+const Post = require("./Post");
 
 class Comment extends Model {}
 
@@ -14,29 +14,22 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    date: {
-      type: DataTypes.DATE,
-      allowNull: false,
+    comment_text: {
+      type: DataTypes.TEXT,
     },
     user_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: User,
         key: "id",
       },
     },
-   blog_id: {
+   post_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
-        model: Blog,
+        model: Post,
         key: "id",
       },
     },
