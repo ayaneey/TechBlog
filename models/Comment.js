@@ -16,6 +16,7 @@ Comment.init(
     },
     comment_text: {
       type: DataTypes.TEXT,
+      require: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -25,7 +26,7 @@ Comment.init(
         key: "id",
       },
     },
-   post_id: {
+    post_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {

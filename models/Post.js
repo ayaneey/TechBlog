@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
+const User = require("./User");
 
 class Post extends Model {
   checkPassword(loginPw) {
@@ -16,10 +17,6 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -27,7 +24,7 @@ Post.init(
         key: "id",
       },
     },
-    description: {
+    text_content: {
       type: DataTypes.STRING,
       allowNull: false,
     },
