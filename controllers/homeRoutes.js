@@ -4,31 +4,30 @@ const sequelize = require("../config/connection");
 
 // Find all posts for homepage
 router.get("/", async (req, res) => {
-	const postData = await Post.findAll({
-		attributes: ["id", "title", "content", "created_at"],
-		include: [
-			{
-				model: User,
-				attributes: ["username"],
-			},
-			{
-				model: User,
-				attributes: ["username"],
-			},
-		],
-	}) // sending over 'loggedIn' session variable to the 'homepage' template
-		.then((dbPostData) => {
-			const posts = dbPostData.map((post) => post.get({ plain: true }));
-			res.render("homepage", {
-				posts,
-				loggedIn: req.session.loggedIn,
-				username: req.session.username,
-			});
-		})
-		.catch((err) => {
-			console.log(err);
-			res.status(500).json(err);
+	try {
+		const postData = await Post.findAll({
+			attributes: ["id", "title", "content", "created_at"],
+			include: [
+				{
+					model: User,
+					attributes: ["username"],
+				},
+				{
+					model: User,
+					attributes: ["username"],
+				},
+			],
+		}); // sending over 'loggedIn' session variable to the 'homepage' template
+		const posts = postData.map((post) => post.get({ plain: true }));
+		res.status(200).render("homepage", {
+			posts,
+			loggedIn: req.session.loggedIn,
+			username: req.session.username,
 		});
+	} catch (error) {
+		console.error(error);
+		res.status(500).json({ error: error.message });
+	}
 });
 
 // Login route

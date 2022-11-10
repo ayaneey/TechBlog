@@ -1,36 +1,37 @@
 {
-  "name": "techblog",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "seed": "node seeds/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ayaneey/TechBlog.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ayaneey/TechBlog/issues"
-  },
-  "homepage": "https://github.com/ayaneey/TechBlog#readme",
-  "devDependencies": {
-    "bcrypt": "^5.1.0",
-    "connect-session-sequelize": "^7.1.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "express-handlebars": "^6.0.6",
-    "express-session": "^1.17.3",
-    "mysql2": "^2.3.3",
-    "nodemon": "^2.0.20",
-    "sequelize": "^6.25.5"
-  },
-  "dependencies": {
-    "mysql": "^2.18.1"
-  }
+	"name": "techblog",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node server.js",
+		"dev": "nodemon server.js",
+		"seed": "node seeds/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ayaneey/TechBlog.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ayaneey/TechBlog/issues"
+	},
+	"homepage": "https://github.com/ayaneey/TechBlog#readme",
+	"devDependencies": {
+		"nodemon": "^2.0.20"
+	},
+	"dependencies": {
+		"bcrypt": "^5.1.0",
+		"connect-session-sequelize": "^7.1.5",
+		"dotenv": "^16.0.3",
+		"express": "^4.18.2",
+		"express-handlebars": "^6.0.6",
+		"express-session": "^1.17.3",
+		"mysql": "^2.18.1",
+		"mysql2": "^2.3.3",
+		"sequelize": "^6.25.5"
+	}
 }
