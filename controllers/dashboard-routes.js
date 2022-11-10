@@ -74,7 +74,18 @@ router
 			res.status(400).json({ message: "No post matches this id!" });
 			return;
 		}
-        // Serialize user data in order for templates to read it
-        const post = 
+		// Serialize user data in order for templates to read it
+		const post = dbPostData.get({ plain: true });
 
+		// Now pass serialized data into Handlebars.js template
+		res.render("edit-post", { post, loggedIn: true });
+	})
+	.catch((err) => {
+		console.log(err);
+		res.status(500).json(err);
 	});
+
+// Rendering new post
+router.get("/new", (req, res) => {
+	res.render("new-post");
+});
