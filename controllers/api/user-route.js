@@ -1,6 +1,16 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require("../../models");
 
+// Find all users
+router.get("/", async (req, res) => {
+	try {
+		const users = await User.findAll({});
+		return res.json(users);
+	} catch (error) {
+		res.json(error);
+	}
+});
+
 // Sign up for new user
 router.post("/signup", async (req, res) => {
 	try {
