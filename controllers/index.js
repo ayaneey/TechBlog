@@ -8,7 +8,7 @@ router.use("/api", apiRoutes);
 router.use("/", homeRoutes);
 
 router.use((req, res) => {
-	res.send(404).end();
+	res.sendStatus(404).end();
 });
 
 module.exports = router;
