@@ -1,8 +1,18 @@
 const router = require("express").Router();
-const Post = require("../../models/User");
+const Post = require("../../models/Post");
+
+// Find posts
+router.get("/", async (req, res) => {
+	try {
+		const postData = await Post.findAll({});
+		return res.json(postData);
+	} catch (error) {
+		res.json(error);
+	}
+});
 
 // Create a post
-router.post("/post", async (req, res) => {
+router.post("/", async (req, res) => {
 	try {
 		const post = await Post.create({
 			title: req.body.title,
@@ -10,7 +20,7 @@ router.post("/post", async (req, res) => {
 			user_id: req.body.user_id,
 			date: req.body.date,
 		});
-		return res.json(post);
+		return res.status(201).json(post);
 	} catch (error) {
 		res.json(error);
 	}
