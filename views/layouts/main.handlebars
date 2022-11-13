@@ -1,0 +1,48 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dashboard || TechBlog</title>
+		<script
+			src="https://kit.fontawesome.com/0c2d75d450.js"
+			crossorigin="anonymous"
+		></script>
+		<style>
+			@import
+			url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+		</style>
+		<link rel="stylesheet" href="/css/style.css" />
+	</head>
+
+	<body>
+		<div class="tech-blog">
+			<h1>The Tech Blog</h1>
+		</div>
+
+		<nav>
+			<ul>
+				<a href="/">Home</a><i class="fa-solid fa-house-user"></i>
+				<a href="/">Dashboard</a><i class="fa-solid fa-table-columns"></i>
+				{{#if loggedIn}}
+					<button id="logout" class="btn-no-style">Logout</button>
+				{{else}}
+					<a href="/login">Login</a><i class="fa-solid fa-right-to-bracket"></i>
+				{{/if}}
+			</ul>
+		</nav>
+
+		<main>
+			<aside>
+				<h2>Welcome to the World of Tech , where the latest updates in tech are
+					discussed!</h2>
+			</aside>
+			<div class="sub-title">
+				{{{body}}}
+			</div>
+		</main>
+		{{#if loggedIn}}
+			<script src="/js/logout.js"></script>
+		{{/if}}
+	</body>
+</html>
