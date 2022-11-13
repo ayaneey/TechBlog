@@ -1,0 +1,37 @@
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-with, initial-scale=1.0" />
+	<title>Dashboard || TechBlog</title>
+	<script
+		src="https://kit.fontawesome.com/0c2d75d450.js"
+		crossorigin="anonymous"
+	></script>
+	<link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+	<div>
+		<h2>Your Posts</h2>
+	</div>
+
+  <nav>
+    <ul>
+      <li><a href="#Home">Home</a></li>
+      <li><a href="#Dashboard">Dashboard</a></li>
+      <li><a href="#Logout">Logout</a></li>
+    </ul>
+  </nav>
+
+
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+    {{#each posts as |post|}}
+      {{> posts post}}
+    {{/each}}
+
+</section>
+{{/if}}
+<button type="submit" class="btn"><a class="link" href="/dashboard/new">+ New Post</a></button>
+<script src="/javascript/new-post.js"></script>
+</body>
