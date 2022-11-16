@@ -43,7 +43,7 @@ const withAuth = require("../utils/auth");
 router.get("/edit/:id", withAuth, async (req, res) => {
 	try {
 		const getPost = await Post.findByPk("1", {
-			attributes: ["id", "title", "content", "created_at"],
+			attributes: ["id", "title", "text_content", "date"],
 			include: [
 				{
 					model: User,

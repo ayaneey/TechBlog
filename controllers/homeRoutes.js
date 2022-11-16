@@ -6,7 +6,7 @@ const sequelize = require("../config/connection");
 router.get("/", async (req, res) => {
 	try {
 		const postData = await Post.findAll({
-			attributes: ["id", "title", "content", "created_at"],
+			attributes: ["id", "title", "text_content", "date"],
 			include: [
 				{
 					model: User,
@@ -46,7 +46,7 @@ router.get("/post/:id", (req, res) => {
 		where: {
 			id: req.params.id,
 		},
-		attributes: ["id", "content", "title", "created_at"],
+		attributes: ["id", "title", "text_content", "date"],
 		include: [
 			{
 				model: Comment,
