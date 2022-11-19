@@ -5,40 +5,6 @@ const { Post, User, Comment } = require("../models");
 // Import the custom middleware
 const withAuth = require("../utils/auth");
 
-// Fetching all posts
-// router.get("/", withAuth, (req, res) => {
-// 	Post.findAll({
-// 		where: {
-// 			user_id: req.session.user_id,
-// 		},
-// 		attributes: ["id", "title", "content", "created_at"],
-// 		include: [
-// 			{
-// 				model: Comment,
-// 				attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
-// 				include: {
-// 					model: User,
-// 					attributes: ["username"],
-// 				},
-// 			},
-// 			{
-// 				model: User,
-// 				attributes: ["username"],
-// 			},
-// 		],
-// 	})
-// 		.then((dbPostData) => {
-// 			const posts = dbPostData.map((post) => {
-// 				post.get({ plain: true });
-// 			});
-// 			res.render("dashboard", { posts, loggedIn: true });
-// 		})
-// 		.catch((err) => {
-// 			console.log(err);
-// 			res.status(500).json(err);
-// 		});
-// });
-
 // Fetching one post
 router.get("/edit/:id", withAuth, async (req, res) => {
 	try {
@@ -75,6 +41,7 @@ router.get("/edit/:id", withAuth, async (req, res) => {
 		res.status(500).json({ error: error.message });
 	}
 });
+
 /* Refactored code */ // DISCARD BELOW!!
 
 // router.get("/edit/:id", withAuth, (res, req) => {

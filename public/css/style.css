@@ -1,0 +1,26 @@
+:root {
+	--manatee: #8e9aafff;
+	--languid-lavender: #cbc0d3ff;
+	--pale-pink: #efd3d7ff;
+	--pale-purple-pantone: #feeafaff;
+	--lavender-web: #dee2ffff;
+	--grey-blue: #355070ff;
+	--chinese-violet: #6d597aff;
+	--cinnamon-satin: #b56576ff;
+	--candy-pink: #e56b6fff;
+	--tumbleweed: #eaac8bff;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: var(--pale-pink);
+}
+
+h1 {
+	color: var(--grey-blue);
+}
