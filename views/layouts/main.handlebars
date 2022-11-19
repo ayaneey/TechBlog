@@ -3,7 +3,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Dashboard || TechBlog</title>
+		<title>TechBlog</title>
 		<script
 			src="https://kit.fontawesome.com/0c2d75d450.js"
 			crossorigin="anonymous"
@@ -23,11 +23,13 @@
 		<nav>
 			<ul>
 				<a href="/">Home</a><i class="fa-solid fa-house-user"></i>
-				<a href="/">Dashboard</a><i class="fa-solid fa-table-columns"></i>
+				<a href="/dashboard">Dashboard</a><i
+					class="fa-solid fa-table-columns"
+				></i>
 				{{#if loggedIn}}
 					<button id="logout" class="btn-no-style">Logout</button>
 				{{else}}
-					<a href="/login">Login</a><i class="fa-solid fa-right-to-bracket"></i>
+					<button id="login" class="btn-no-style">Login</button>
 				{{/if}}
 			</ul>
 		</nav>
