@@ -30,6 +30,11 @@ router.get("/", async (req, res) => {
 	}
 });
 
+router.get("/dashboard", (req, res) => {
+	console.log("inside dashboard route");
+	res.render("dashboard");
+});
+
 // Login route
 router.get("/login", (req, res) => {
 	console.log(req.body);

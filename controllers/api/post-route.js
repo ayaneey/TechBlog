@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
 			user_id: req.body.user_id,
 			date: req.body.date,
 		});
-		return res.status(201).json(post);
+		return res.render("dashboard", { posts: post });
 	} catch (error) {
 		res.json(error);
 	}

@@ -24,3 +24,11 @@ body {
 h1 {
 	color: var(--grey-blue);
 }
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
+}
