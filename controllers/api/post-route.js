@@ -18,8 +18,8 @@ router.post("/", async (req, res) => {
 			title: req.body.title,
 			text_content: req.body.text_content,
 			user_id: req.body.user_id,
-			date: req.body.date,
 		});
+		console.log(post);
 		return res.render("dashboard", { posts: post });
 	} catch (error) {
 		res.json(error);
