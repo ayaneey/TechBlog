@@ -26,15 +26,15 @@
 // }
 async function showAddForm(event) {
 	event.preventDefault();
-	document.getElementsByClassName("new-post").setAttribute("class", "show");
-	let title = document.getElementById("title").value;
-	let text_content = document.getElementById("content").value;
+	document.querySelector(".new-post").setAttribute("class", "show");
+	let title = document.getElementById("post-title").value;
+	let text_content = document.getElementById("post-content").value;
 	let user_id = 1;
 	let date = new Date();
 
-	let response = fetch("/api/posts", {
+	let response = fetch("/api/post", {
 		method: "POST",
-		body: JSON.stringify(title, content, user_id, date),
+		body: JSON.stringify(title, text_content, user_id, date),
 		headers: {
 			"Content-Type": "application/json",
 		},
