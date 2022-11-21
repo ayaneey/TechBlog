@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
 		const post = await Post.create({
 			title: req.body.title,
 			text_content: req.body.text_content,
-			user_id: req.body.user_id,
+			user_id: req.session.user_id,
 		});
 		console.log(post);
 		return res.render("dashboard", { posts: post });

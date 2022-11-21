@@ -30,16 +30,19 @@ async function showAddForm(event) {
 	let title = document.getElementById("post-title").value;
 	let text_content = document.getElementById("post-content").value;
 	let user_id = 1;
-	let date = new Date();
-
-	let response = fetch("/api/post", {
+	console.log(JSON.stringify({ title, text_content }));
+	let response = fetch("/api/posts", {
 		method: "POST",
-		body: JSON.stringify(title, text_content, user_id, date),
+		body: JSON.stringify({ title, text_content, user_id }),
 		headers: {
 			"Content-Type": "application/json",
 		},
 	});
-	console.log(response);
+	if (response.ok) {
+		document.location.replace("/dashboard");
+	} else {
+		alert(response.statusText);
+	}
 }
 
 document.querySelector(".new-post").addEventListener("submit", showAddForm);
