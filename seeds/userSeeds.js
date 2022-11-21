@@ -11,6 +11,11 @@ const seedData = [
 		email: "alex@gmail.com",
 		password: "testpassword12",
 	},
+	{
+		username: "Bob",
+		email: "bob@gmail.com",
+		password: "sample123",
+	},
 ];
 
 // Data is being transferred over - pre-populated data in the table
