@@ -21,30 +21,28 @@ router.post("/login", async (req, res) => {
 		});
 
 		if (!dbUserData) {
-			res
-				.status(400)
-				.json({ message: "Incorrect email or password. Please try again!" });
+			res.status(400).json({
+				message: "Incorrect email or password. Please try again! Testing 1",
+			});
 			return;
 		}
 
 		const validPassword = await dbUserData.checkPassword(req.body.password);
 
 		if (!validPassword) {
-			res
-				.status(400)
-				.json({ message: "Incorrect email or password. Please try again!" });
+			res.status(400).json({
+				message: "Incorrect email or password. Please try again! Testing 2",
+			});
 			return;
 		}
 
 		// Once the user successfully logs in, set up the sessions variable 'loggedIn'
 		req.session.save(() => {
 			req.session.loggedIn = true;
-			req.session.email = req.body.email;
-
 			// res
 			// 	.status(200)
 			// 	.json({ user: dbUserData, message: "You are now logged in!" });
-			res.render("main.handlebars");
+			res.render("/dashboard");
 		});
 	} catch (err) {
 		console.log(err);
@@ -53,7 +51,7 @@ router.post("/login", async (req, res) => {
 });
 
 // Sign up for new user
-router.post("/signup", async (req, res) => {
+router.post("/", async (req, res) => {
 	try {
 		const userData = await User.create({
 			username: req.body.username,
@@ -61,7 +59,13 @@ router.post("/signup", async (req, res) => {
 			password: req.body.password,
 		});
 		// console.log(userData);
-		res.status(200).json(userData);
+		req.session.save(() => {
+			req.session.loggedIn = true;
+			req.session.email = userData.email;
+			req.session.userId = userData.id;
+			req.session.username = userData.username;
+			res.json(userData);
+		});
 	} catch (err) {
 		res.status(400).json(err);
 	}
