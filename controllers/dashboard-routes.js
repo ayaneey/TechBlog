@@ -68,7 +68,7 @@ router.get("/edit/:id", withAuth, async (req, res) => {
 			],
 		});
 		const post = getPost.map((post) => post.get({ plain: true }));
-		res.status(200).render("homepage", {
+		res.status(200).render("edit-post", {
 			post,
 			loggedIn: true,
 		});

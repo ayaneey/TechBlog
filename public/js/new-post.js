@@ -26,7 +26,7 @@
 // }
 async function showAddForm(event) {
 	event.preventDefault();
-	document.querySelector(".new-post").setAttribute("class", "show");
+	// document.querySelector(".new-post").setAttribute("class", "show");
 	let title = document.getElementById("post-title").value;
 	let text_content = document.getElementById("post-content").value;
 	let user_id = 1;
