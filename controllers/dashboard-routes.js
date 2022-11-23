@@ -5,10 +5,6 @@ const { Post, User, Comment } = require("../models");
 // Import the custom middleware
 const withAuth = require("../utils/auth");
 
-router.get("/", (req, res) => {
-	res.render("dashboard");
-});
-
 // get all posts
 router.get("/", withAuth, (req, res) => {
 	Post.findAll({

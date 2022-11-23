@@ -44,9 +44,15 @@ router.post("/login", async (req, res) => {
 			// 	.json({ user: dbUserData, message: "You are now logged in!" });
 			res.render("/dashboard");
 		});
+		req.session.save(() => {
+			req.session.loggedIn = true;
+			req.session.email = userData.email;
+			req.session.userId = userData.id;
+			req.session.username = userData.username;
+		});
 	} catch (err) {
 		console.log(err);
-		res.status(500).json(err);
+		res.status(400).json(err);
 	}
 });
 
