@@ -11,6 +11,16 @@ const seedData = [
 		text_content: "this is text_content 2",
 		user_id: 2,
 	},
+	{
+		title: "Blog4",
+		text_content: "this is text_content 2",
+		user_id: 1,
+	},
+	{
+		title: "Blog5",
+		text_content: "this is text_content 2",
+		user_id: 2,
+	},
 ];
 
 const blogData = () => Post.bulkCreate(seedData);
