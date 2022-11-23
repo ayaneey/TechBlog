@@ -1,24 +1,30 @@
   <nav>
     <ul>
-      <li><a href="#Home">Home</a></li>
-      <li><a href="#Dashboard">Dashboard</a></li>
-      <li><a href="#Logout">Logout</a></li>
+      {{!-- <li><a href="#Home">Home</a></li>
+      <li><a href="#Dashboard">Dashboard</a></li> --}}
+      <li id="logout"><a href="#Logout">Logout</a></li>
     </ul>
   </nav>
   <div id="new_post" class= "hide">
     <textarea name="title" id="title" cols="30" rows="10"></textarea>
     <textarea name="content" id="content" cols="30" rows="20"></textarea>
   </div>
-   <button >
+   {{!-- <button class="add-post" >
     <a class="link" href="/dashboard/new">
     Add Post 
     </a>
-      
-    </button>
+    </button> --}}
 
-  	<div>
+  	<div class="your-posts">
 		<h2>Your Posts</h2>
+    <div class="posts-content"></div>
 	</div>
+
+  <div id="form-post">
+      <ul>
+      <a href="/dashboard/new"> + Add Post</a>
+      </ul>
+    </div>
 
 
 {{#if posts.length}}

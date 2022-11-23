@@ -32,3 +32,91 @@ h1 {
 .show {
 	display: block;
 }
+
+/* title */
+
+.tech-blog {
+	font-size: 35px;
+}
+
+/* nav bar */
+
+nav {
+	/* border-radius: 3px;
+	border-color: var(--manatee);
+	border-style: solid; */
+	height: 4rem;
+	font-size: 20px;
+	align-items: center;
+	display: inline-block;
+	margin-left: 3%;
+}
+
+ul {
+	display: block;
+	list-style: none;
+	float: left;
+}
+ul a {
+	display: inline-block;
+	background-color: #fefefe;
+	border: 2px solid;
+	padding: 3px;
+	border-radius: 5px 5px;
+	color: rgb(40, 40, 40);
+	text-decoration: none;
+}
+ul a:hover {
+	background-color: var(--lavender-web);
+	border: 3px solid;
+}
+
+.card-container {
+	border-radius: 3px;
+	border-style: solid;
+	border-color: var(--chinese-violet);
+	margin-top: 30px;
+	height: 12vh;
+}
+
+/* Dashboard */
+
+.your-posts {
+	margin-top: 20px;
+}
+.posts-content {
+	border-radius: 2px;
+	border-style: solid;
+	border-color: var(--grey-blue);
+	height: 60vh;
+}
+
+#form-post {
+	margin-top: 2%;
+	align-items: center;
+	margin-left: 40%;
+	font-size: 20px;
+}
+
+.add-post {
+	display: inline-block;
+	background-color: #fefefe;
+	border: 2px solid;
+	padding: 3px;
+	border-radius: 5px 5px;
+	color: rgb(40, 40, 40);
+	text-decoration: none;
+	display: block;
+	list-style: none;
+}
+
+.add-post :hover {
+	background-color: var(--lavender-web);
+	border: 3px solid;
+}
+
+/* Footer */
+
+footer {
+	margin-top: 23%;
+}
