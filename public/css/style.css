@@ -137,6 +137,26 @@ ul a:hover {
 	font-size: 22px;
 }
 
+/* form */
+
+form {
+	font-size: 20px;
+}
+
+#login-btn {
+	background-color: var(--lavender-web);
+	height: 4vh;
+	width: 5vw;
+	border-radius: 2rem;
+}
+
+#signup-btn {
+	background-color: var(--lavender-web);
+	height: 4vh;
+	width: 5vw;
+	border-radius: 2rem;
+}
+
 /* Footer */
 
 footer {
