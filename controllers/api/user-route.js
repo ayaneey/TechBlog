@@ -39,16 +39,13 @@ router.post("/login", async (req, res) => {
 		// Once the user successfully logs in, set up the sessions variable 'loggedIn'
 		req.session.save(() => {
 			req.session.loggedIn = true;
-			// res
-			// 	.status(200)
-			// 	.json({ user: dbUserData, message: "You are now logged in!" });
-			res.render("/dashboard");
-		});
-		req.session.save(() => {
-			req.session.loggedIn = true;
-			req.session.email = userData.email;
-			req.session.userId = userData.id;
-			req.session.username = userData.username;
+			req.session.email = dbUserData.email;
+			req.session.userId = dbUserData.id;
+			req.session.username = dbUserData.username;
+			res
+				.status(200)
+				.json({ user: dbUserData, message: "You are now logged in!" });
+			// res.render("/dashboard");
 		});
 	} catch (err) {
 		console.log(err);
