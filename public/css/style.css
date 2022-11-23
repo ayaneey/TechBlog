@@ -25,6 +25,18 @@ h1 {
 	color: var(--grey-blue);
 }
 
+a {
+	text-decoration: none;
+}
+
+h4 {
+	border-radius: 2px;
+	border-style: solid;
+	border-color: var(--cinnamon-satin);
+	font-size: 30px;
+	height: 6vh;
+}
+
 .hide {
 	display: none;
 }
@@ -75,7 +87,7 @@ ul a:hover {
 	border-radius: 3px;
 	border-style: solid;
 	border-color: var(--chinese-violet);
-	margin-top: 30px;
+	margin-top: 45px;
 	height: 12vh;
 }
 
@@ -113,6 +125,16 @@ ul a:hover {
 .add-post :hover {
 	background-color: var(--lavender-web);
 	border: 3px solid;
+}
+
+/* post styling */
+
+.posted-by {
+	font-size: 16px;
+}
+
+.card-body {
+	font-size: 22px;
 }
 
 /* Footer */
