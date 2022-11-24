@@ -20,9 +20,6 @@
 		"url": "https://github.com/ayaneey/TechBlog/issues"
 	},
 	"homepage": "https://github.com/ayaneey/TechBlog#readme",
-	"devDependencies": {
-		"nodemon": "^2.0.20"
-	},
 	"dependencies": {
 		"bcrypt": "^5.1.0",
 		"connect-session-sequelize": "^7.1.5",
@@ -32,6 +29,7 @@
 		"express-session": "^1.17.3",
 		"mysql": "^2.18.1",
 		"mysql2": "^2.3.3",
-		"sequelize": "^6.25.5"
+		"sequelize": "^6.25.5",
+		"nodemon": "^2.0.20"
 	}
 }
